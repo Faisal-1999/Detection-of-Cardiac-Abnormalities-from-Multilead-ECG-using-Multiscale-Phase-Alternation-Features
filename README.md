@@ -56,8 +56,17 @@ Multilead ECG (12-Lead, 4096 Samples per frame)
    $$cD_l^m(k) = \tilde{cD}_l^m(k) + j\,\overline{cD}_l^m(k)$$
 .
    where $l \in \{1, 2, \dots, 6\}$ denotes the detail decomposition level and $L=6$ represents the approximation scale.
-4. **Sub-band Phase Evaluation:** The phase angle $\phi(k)$ is extracted for the diagnostically significant sub-bands ($cA_6$, $cD_6$, $cD_5$, and $cD_4$).:
-   $$\phi_{cA_L}^m(k) = \tan^{-1}\left( \frac{\overline{cA}_L^m(k)}{\tilde{cA}_L^m(k)} \right), \quad \phi_{cD_l}^m(k) = \tan^{-1}\left( \frac{\overline{cD}_l^m(k)}{\tilde{cD}_l^m(k)} \right)$$
+4. ### Sub-band Phase Evaluation
+
+The phase angle $\phi(k)$ is extracted for the diagnostically significant sub-bands ($cA_6$, $cD_6$, $cD_5$, and $cD_4$):
+
+$$
+\phi_{cA_L}^m(k) = \tan^{-1}\left( \frac{\overline{cA}_L^m(k)}{\tilde{cA}_L^m(k)} \right)
+$$
+
+$$
+\phi_{cD_l}^m(k) = \tan^{-1}\left( \frac{\overline{cD}_l^m(k)}{\tilde{cD}_l^m(k)} \right)
+$$
 .
 
 ---
