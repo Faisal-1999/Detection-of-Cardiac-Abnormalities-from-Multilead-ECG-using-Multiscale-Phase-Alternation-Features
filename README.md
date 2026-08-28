@@ -18,33 +18,34 @@ Because visual inspection across continuous 24-hour multilead recordings is labo
 
 ## 2. Theoretical Overview & Mathematical Modeling
 
-Multilead ECG (12-Lead, 4096 Samples per frame)
-                                  │
-                                  ▼
-         Preprocessing (0.5 Hz Butterworth HPF + Denoising)
-                                  │
-                                  ▼
-               6-Level DTCWT Sub-band Decomposition
-                  (cA6, cD6, cD5, cD4 Sub-bands)
-                                  │
-                                  ▼
-              Sub-band Phase Extraction (Eq. 1 & 2)
-                                  │
-                                  ▼
-          Multiscale Phase Alternation (PA) Computation
-                  (48-Dimensional Feature Vector)
-                                  │
-                                  ▼
-             Feature Selection (ANOVA / SD Scoring)
-                                  │
-                                  ▼
-                 Fuzzy KNN Classification (K = 5)
-                                  │
-           ┌──────────────────────┼──────────────────────┬──────────────────────┐
-           ▼                      ▼                      ▼                      ▼
-  Bundle Branch Block   Heart Muscle Disease   Myocardial Infarction    Healthy Control
-         (BBB)                  (HMD)                  (MI)                  (HC)
-
+```text
+               Multilead ECG (12-Lead, 4096 Samples per frame)
+                                      │
+                                      ▼
+             Preprocessing (0.5 Hz Butterworth HPF + Denoising)
+                                      │
+                                      ▼
+                   6-Level DTCWT Sub-band Decomposition
+                      (cA6, cD6, cD5, cD4 Sub-bands)
+                                      │
+                                      ▼
+                  Sub-band Phase Extraction (Eq. 1 & 2)
+                                      │
+                                      ▼
+              Multiscale Phase Alternation (PA) Computation
+                      (48-Dimensional Feature Vector)
+                                      │
+                                      ▼
+                 Feature Selection (ANOVA / SD Scoring)
+                                      │
+                                      ▼
+                     Fuzzy KNN Classification (K = 5)
+                                      │
+               ┌──────────────────────┼──────────────────────┬──────────────────────┐
+               ▼                      ▼                      ▼                      ▼
+      Bundle Branch Block   Heart Muscle Disease   Myocardial Infarction    Healthy Control
+             (BBB)                  (HMD)                  (MI)                  (HC)
+```
 ---
 
 ### Step 1: Preprocessing & Multiscale Decomposition
