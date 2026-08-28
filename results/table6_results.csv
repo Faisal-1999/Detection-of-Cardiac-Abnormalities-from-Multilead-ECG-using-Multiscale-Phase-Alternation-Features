@@ -1,0 +1,7 @@
+Feature selection,Classifier,HC %,MI %,HMD %,BBB %,Accuracy %
+All features,Fuzzy KNN,95.65,98.15,85.11,90.02,92.23
+Selected (ANOVA),Fuzzy KNN,95.25,97.8,85.18,89.63,91.96
+Selected (SD score),Fuzzy KNN,95.65,98.15,85.11,90.02,92.23
+All features,KNN,95.65,98.15,85.11,90.02,92.23
+Selected (ANOVA),KNN,95.25,97.8,85.18,89.63,91.96
+Selected (SD score),KNN,95.65,98.15,85.11,90.02,92.23
